@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login 페이지 마크업 실습</title>
+    <style>
+      .sr-only {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 로그인 박스라면, 위니브의 모든 페이지마다 들어갈 것 같은데? -->
+    <section>
+      <!-- 2. h1,h2중 제목태그 뭘로 해주지? -->
+      <!-- 이 section은 페이지 내에 들어갈 것 같으니까, h1은 이 페이지 내에 존재할것같아. -->
+      <h2 class="sr-only">로그인</h2>
+      <!-- 3. 한줄을 다 차지하는 문장이네? 블럭요소가 필요하겠다. -->
+      <p>더 편리해진 위니브에 오신 것을 환영합니다.</p>
+      <!-- 4. 버튼일까, a태그일까? 시안이 다 완성되지 않은 상태에서 판단해보자.  -->
+      <a href="./">
+        <img src="./src/weniv-logo.png" alt="weniv" />
+        <!-- 5. 로고의 alt속성엔 회사명만 -->
+        로그인
+      </a>
+      <!-- 6. 아이디,비밀번호찾기,회원가입은 a인가 버튼인가.. -> a태그 -->
+      <!-- 7. 아이콘은 뭔가.어떻게 처리해야하는가 -->
+
+      <img src="./src/icon-lock.png" alt="" />
+      <!-- img 태그의 alt 속성엔 뭘 넣어야하는가? -> 단순히 시각적인 목적을 가진 아이콘이니까 비워두자. -->
+      <a href="">아이디</a>
+      <span>|</span>
+      <!-- 나중에 css 가상요소 처리 -->
+      <a href="">비밀번호찾기</a>
+
+      <a href="">
+        <img src="./src/icon-user.png" alt="" />
+        회원가입
+      </a>
+    </section>
+  </body>
+</html>
