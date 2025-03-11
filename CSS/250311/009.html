@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 타입의 관계없이 자손 요소 중 위치에 기반해서 선택 */
+            div :nth-child(1) {
+                color: red;
+            }
+
+            /* div :nth-child(even) {
+                background-color: thistle;
+            } */
+
+            div :nth-child(2n) {
+                background-color: thistle;
+            }
+
+            /* div :nth-child(odd) {
+                background-color: aqua;
+            } */
+
+            div :nth-child(2n + 1) {
+                background-color: aqua;
+            }
+
+            div :nth-child(-n + 3) {
+                font-size: 32px;
+            }
+
+            /* 위 아래 같은 선택자 */
+            /* ul :nth-child(1)
+            ul li:nth-child(1) */
+
+            div p:nth-child(3) {
+                background-color: red;
+            }
+
+            /* 동일한 타입 요소 중 위치에 기반해서 선택 */
+            div p:nth-of-type(3) {
+                background-color: chartreuse;
+            }
+
+            /* 유일하게 사용된 요소 선택 */
+            div :only-of-type {
+                color: blueviolet;
+            }
+
+            ul li:not(:first-child) {
+                color: blue;
+            }
+
+            ul li:nth-child(3) {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>첫 번째 문단</p>
+            <h2>첫 번째 제목</h2>
+            <p>두 번째 문단</p>
+            <p>세 번째 문단</p>
+            <span>Lorem ipsum</span>
+        </div>
+
+        <ul>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+
+        <ul>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+
+        <ul>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+            <li>list</li>
+        </ul>
+    </body>
+</html>

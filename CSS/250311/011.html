@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 타입을 고려하지않고 위치를 기반으로 해서 선택 */
+            div p:nth-child(3) {
+                background-color: red;
+            }
+
+            /* 동일한 타입 요소 중 위치에 기반해서 선택 */
+            div p:nth-of-type(3) {
+                background-color: chartreuse;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>첫 번째 문단</p>
+            <h2>첫 번째 제목</h2>
+            <p>두 번째 문단</p>
+            <p>세 번째 문단</p>
+            <span>Lorem ipsum</span>
+        </div>
+    </body>
+</html>

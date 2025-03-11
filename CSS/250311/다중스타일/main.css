@@ -1,0 +1,12 @@
+@import url("reset.css");
+@import url("font.css");
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    background-color: #f8f9fa;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
