@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        p {
+            /* 행간 조절, 1.5~2 사이가 좋은 가독성 */
+            line-height: 2;
+            line-height: 20px;
+
+            /* 자간 조절 */
+            letter-spacing: 20px;
+        }
+
+        span {
+            line-height: 2.5;
+            background-color: orange;
+        }
+
+        span > span {
+            line-height: 1;
+            background-color: yellow;
+        }
+
+        /* 인라인 요소 수직정렬 */
+        .baseline {
+            vertical-align: baseline;
+        }
+
+        .sub {
+            vertical-align: sub;
+        }
+
+        .super {
+            vertical-align: super;
+        }
+
+        .top {
+            vertical-align: top;
+        }
+
+        .middle {
+            vertical-align: middle;
+        }
+
+        .bottom {
+            vertical-align: bottom;
+        }
+
+        .text-top {
+            vertical-align: text-top;
+        }
+
+        .text-bottom {
+            vertical-align: text-bottom;
+        }
+    </style>
+    <body>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, consequuntur, fugiat corporis, repellendus iure amet qui officiis fugit rem iusto nulla id voluptatum esse deleniti a
+            placeat. Quae, sed optio?
+        </p>
+
+        <span>
+            텍스트
+            <span class="box baseline">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box sub">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box super">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box top">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box middle">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box bottom">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box text-top">baseline</span>
+        </span>
+        <span>
+            텍스트
+            <span class="box text-bottom">baseline</span>
+        </span>
+    </body>
+</html>

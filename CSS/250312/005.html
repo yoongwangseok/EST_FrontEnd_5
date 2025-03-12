@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            p {
+                /* 폰트의 크기 지정 */
+                /* 절대단위 */
+                font-size: 16px;
+                /* 상대단위 */
+                font-size: 2rem;
+                font-size: 2em;
+
+                /* 폰트의 굵기 지정 */
+                font-weight: bold;
+                font-weight: 900;
+
+                /* 기본값은 none */
+                /* 모든 문자를 대문자로 */
+                text-transform: uppercase;
+                /* 모든 문자를 소문자로 */
+                text-transform: lowercase;
+                /* 단어의 첫문자를 대문자로 */
+                text-transform: capitalize;
+            }
+            span {
+                /* 폰트사이즈 키워드 */
+                /* 절대크기 키워드 */
+                font-size: xx-small;
+                /* 상대크기 (부모 요소 기준) */
+                font-size: smaller;
+                font-size: larger;
+
+                /* text-decoration-color: blue;
+                text-decoration-line: overline underline;
+                text-decoration-style: double;
+                text-decoration-thickness: 5px; */
+                /* 위 아래가 같은 스타일 */
+                text-decoration: blue overline underline double 5px;
+
+                /* 가로거리 세로거리 번짐정도 색상 */
+                text-shadow: 10px 10px 5px gray, -10px -10px 5px gray;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et atque aut hic deserunt. Mollitia quia, labore, dolorem quasi eos nostrum error velit odio unde provident rem accusamus,
+            repellat dicta dolor.
+            <span>lorem</span>
+        </p>
+    </body>
+</html>
