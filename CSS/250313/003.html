@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: lightgreen;
+            }
+
+            .box1,
+            .box3 {
+                border: solid 10px black;
+                border-style: dashed;
+                border-style: dotted;
+                border-top-style: solid;
+                border-right-style: dashed;
+                border-bottom-style: dotted;
+                border-left-style: double;
+                border: pink dashed 10px;
+                padding: 10px;
+            }
+
+            .box1 {
+                /* 기본값/ width, height값에 padding, border가 포함되지 않음 */
+                box-sizing: content-box;
+            }
+
+            .box3 {
+                /* width, height값에 padding, border가 포함 */
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </body>
+</html>

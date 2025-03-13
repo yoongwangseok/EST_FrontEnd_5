@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            div {
+                width: 1000px;
+                height: 1000px;
+                border: solid 10px black;
+
+                background-image: url(./image.png);
+                /* background-image: url(https://i.namu.wiki/i/8BAuDmjlFbHoGpGTyTUJyeIsrWw7vrGKTvbOBS1DbaLNHHFL6D05TSZEyVGGffn_RIs6zrf4jCb5Xq5Lnbs8QQ.webp); */
+
+                /* 배경 이미지를 반복하는 방식 */
+                /* 반복x */
+                background-repeat: no-repeat;
+                /* x축으로만 반복 */
+                background-repeat: repeat-x;
+                /* y축으로만 반복 */
+                background-repeat: repeat-y;
+                /* 이미지 크기조절 x, 동일한 여백을 두고 반복 */
+                background-repeat: space;
+                /* 이미지 크기조절, 여백 없이 반복 */
+                background-repeat: round;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+</html>
