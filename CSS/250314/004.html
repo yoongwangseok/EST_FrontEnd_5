@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .container {
+                border: solid 5px lightblue;
+
+                /* 모든 자식요소가 float속성을 가질 때 부모요소는 자식 요소의 높이를 인식 못함 */
+                /* 해결방법 1, 유연성이 떨어지므로 권장하지 않음 */
+                /* height: 300px; */
+
+                /* 해결방법 2 */
+                /* overflow: hidden; */
+            }
+
+            .clearfix::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            img {
+                float: left;
+                width: 100px;
+            }
+
+            h2 {
+                float: right;
+            }
+
+            p {
+                /* clear: both; */
+                /* clear: left; */
+                /* clear: right; */
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container clearfix">
+            <h2>hello</h2>
+            <img src="./img/weniv-binky.png" alt="" />
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui, quasi ab aliquam non atque eveniet sunt reprehenderit eius adipisci officia nostrum, porro hic! Eligendi sequi at
+                molestiae cupiditate ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, molestiae laborum! Iusto veritatis ea natus impedit voluptatem quidem dignissimos
+                aspernatur quas cum laudantium ad rem amet, quo, tempora culpa fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui, quasi ab aliquam non atque eveniet sunt
+                reprehenderit eius adipisci officia nostrum, porro hic! Eligendi sequi at molestiae cupiditate ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, molestiae
+                laborum! Iusto veritatis ea natus impedit voluptatem quidem dignissimos aspernatur quas cum laudantium ad rem amet, quo, tempora culpa fuga? quasi ab aliquam non atque eveniet sunt
+                reprehenderit eius adipisci officia nostrum, porro hic! Eligendi sequi at molestiae cupiditate ullam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, molestiae
+                laborum! Iusto veritatis ea natus impedit voluptatem quidem dignissimos aspernatur quas cum laudantium ad rem amet, quo, tempora culpa fuga?
+            </p>
+        </div>
+    </body>
+</html>
