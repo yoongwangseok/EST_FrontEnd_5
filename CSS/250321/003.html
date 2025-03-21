@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            @media screen and (min-width: 640px) and (max-width: 800px) {
+                body {
+                    font-size: 4rem;
+                }
+            }
+
+            /* 화면이 세로모드일 때 */
+            @media (orientation: portrait) {
+                body {
+                    background-color: royalblue;
+                }
+            }
+
+            /* 화면이 가로모드일 때 */
+            @media (orientation: landscape) {
+                body {
+                    background-color: rosybrown;
+                }
+            }
+
+            /* 둘 중 하나라도 만족되는 조건인 경우 */
+            @media (min-width: 700px), (orientation: landscape) {
+                body {
+                    background-color: brown;
+                }
+            }
+
+            /* 미디어쿼리를 지원하는 브라우저에서만 스타일이 적용 */
+            /* @media only screen and (max-width: 500px) {} */
+        </style>
+    </head>
+    <body>
+        안녕하세요
+    </body>
+</html>
