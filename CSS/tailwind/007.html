@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <div class="grid grid-cols-3 gap-2">
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+        </div>
+
+        <!-- 
+        Modifier	Media query
+        max-sm	@media not all and (min-width: 640px) { ... }
+        max-md	@media not all and (min-width: 768px) { ... }
+        max-lg	@media not all and (min-width: 1024px) { ... }
+        max-xl	@media not all and (min-width: 1280px) { ... }
+        max-2xl	@media not all and (min-width: 1536px) { ... } 
+    -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+        </div>
+
+        <div class="grid grid-cols-3 grid-row-4">
+            <div class="bg-red-200 col-span-2 row-span-3">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+            <div class="bg-blue-200">item</div>
+        </div>
+    </body>
+</html>
