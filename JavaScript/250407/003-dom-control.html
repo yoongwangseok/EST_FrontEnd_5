@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background: lightgreen;
+        margin: 10px;
+      }
+      .pink {
+        background: pink;
+        border: 3px solid #bdbdbd;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="click-btn">클릭하세요</button>
+    <div class="box class-box"></div>
+    <div>
+      <button id="add-btn">클래스 추가</button>
+      <button id="remove-btn">클래스 제거</button>
+      <button id="toggle-btn">클래스 토글</button>
+    </div>
+
+    <button id="image-change-btn">Change Image</button>
+    <img
+      src="https://paullab.co.kr/images/weniv-licat.png"
+      alt="라이캣"
+      id="image"
+      class="weniv-img"
+    />
+    <script>
+      // 1. 이벤트 등록
+      // 이벤트: 사용자와 웹 페이지간의 상호작용, 사용자의 행동을 감지
+      const clickBtn = document.getElementById("click-btn");
+
+      // 리스너, 핸들러: 이벤트가 발생했을 때 실행할 함수
+      clickBtn.addEventListener("click", () => {
+        console.log("버튼이 클릭되었습니다");
+      });
+
+      // 1) 요소 선택
+      const box = document.querySelector(".box");
+      // console.log(box);
+      // box.addEventListener("mouseenter", () => {
+      //   console.log("박스에 들어갑니다.");
+      // });
+      // box.addEventListener("mouseleave", () => {
+      //   console.log("박스에서 나갑니다.");
+      // });
+
+      // box.addEventListener("mouseenter", () => {
+      //   console.log("이 함수도 실행이 될까요?");
+      // });
+
+      // 2. 스타일 변경
+      // 버튼에 이벤트가 발생했을 때 box의 스타일링을 바꾸다.
+      clickBtn.addEventListener("click", () => {
+        // CSSStyleDeclaration 객체
+        console.log(box.style);
+        // 케밥케이스로 작성된 속성명 -> 카멜케이스
+        box.style.border = "3px solid black";
+        box.style.width = "200px";
+        //background-color
+        box.style.backgroundColor = "#efefef";
+
+        // float - js float / css float
+        // console.log(box.style.cssFloat);
+        // console.log(box.style.float);
+      });
+
+      // 3. 클래스 제어
+      // const box = document.querySelector(".box");
+      const addBtn = document.getElementById("add-btn");
+      const removeBtn = document.getElementById("remove-btn");
+      const toggleBtn = document.getElementById("toggle-btn");
+
+      // classList
+      console.log(box.classList);
+      console.log(box.className); // 설정된 클래스를 확인
+
+      // box.classList.add("pink"); // 클래스 추가
+      // box.classList.remove("class-box"); // 클래스 제거
+      // // 클래스 토글
+      // // 클래스가 있다 -> 클래스를 제거
+      // // 클래스가 없다 -> 클래스를 추가
+      // box.classList.toggle("box"); // box 클래스가 있음 -> 제거
+      // box.classList.toggle("box"); // box 클래스가 없음 -> 추가
+      // 포함되어 있는지 출력: classList.contains
+      console.log(addBtn, removeBtn, toggleBtn);
+
+      addBtn.addEventListener("click", () => {
+        console.log("=== 클래스 추가 ===");
+        box.classList.add("pink");
+        console.log("pink 포함:", box.classList.contains("pink"));
+      });
+
+      removeBtn.addEventListener("click", () => {
+        console.log("=== 클래스 제거 ===");
+        box.classList.remove("pink");
+        console.log("pink 포함:", box.classList.contains("pink"));
+      });
+
+      toggleBtn.addEventListener("click", () => {
+        console.log("=== 클래스 토글 ===");
+        box.classList.toggle("pink");
+        console.log("pink 포함:", box.classList.contains("pink"));
+      });
+
+      //4. 속성 제어
+      const imageChangeBtn = document.getElementById("image-change-btn");
+      const image = document.getElementById("image");
+      console.log("src", image.getAttribute("src"));
+      console.log("alt", image.getAttribute("alt"));
+      console.log("id", image.getAttribute("id"));
+      console.log("class", image.getAttribute("class"));
+
+      imageChangeBtn.addEventListener("click", () => {
+        image.setAttribute(
+          "src",
+          "https://paullab.co.kr/images/weniv-soulgom.png"
+        );
+        image.setAttribute("alt", "지친 소울곰");
+
+        // data 속성
+        image.dataset.introduce = "나는 소울풀한 소울곰!"; // data-introduce
+        image.dataset.copyright = "2023-2025 Weniv Inc. All rights reserved."; // data-copyright
+
+        console.log(image.dataset);
+        // Object.keys : 객체의 key를 배열로 반환
+        // Object.values : 객체의 value를 배열로 반환
+        // Object.entries : 객체의 [key, value]를 배열로 반환
+        // [[key1, value1], [key2, value2]]
+        for (const [key, value] of Object.entries(image.dataset)) {
+          console.log(key, value);
+        }
+      });
+    </script>
+  </body>
+</html>

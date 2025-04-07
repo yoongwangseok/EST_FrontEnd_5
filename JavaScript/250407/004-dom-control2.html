@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 class="title">
+      오늘의 <strong>점심 메뉴</strong>
+      <span style="display: none">리스트</span>
+    </h3>
+    <div>
+      <input type="text" name="menu-input" id="menu-input" />
+      <button type="button" id="menu-add-btn">추가하기</button>
+    </div>
+    <ul class="menu-list"></ul>
+
+    <ul id="fruit-list"></ul>
+
+    <p>
+      <strong id="target">--타겟--</strong>
+    </p>
+    <script>
+      const title = document.querySelector(".title");
+      console.log(title);
+
+      // HTML 태그를 포함하는 문자열
+      console.log("innerHTML", title.innerHTML);
+      const strong = title.querySelector("strong");
+      console.log(strong.innerHTML);
+      strong.innerHTML = '<span style="color:green">저녁 메뉴</span>';
+
+      const menuInput = document.getElementById("menu-input");
+      const menuAddBtn = document.getElementById("menu-add-btn");
+      const menuList = document.querySelector(".menu-list");
+
+      //1. 버튼이 클릭이 되었을 때
+      // 2. 입력창에 있는 값을 가져와서
+      // 3. menuList(ul) li 요소로 추가
+      // menuAddBtn.addEventListener("click", () => {
+      //   console.log(menuInput.value);
+      //   menuList.innerHTML += `<li>${menuInput.value}</li>`;
+      //   menuInput.value = "";
+      // });
+      // innerHTML로 받아온 script 태그는 실행X
+
+      // 2. innerText
+      // 화면에 보여지는 텍스트를 가져오는 기능
+      console.log("innerText", title.innerText);
+      // title.innerText = "<strong>저녁메뉴</strong>";
+
+      // 3. textContent
+      // 노드의 모든 텍스트 콘텐츠 -> 화면에 보이지 않는 텍스트
+      console.log("textContent", title.textContent);
+      title.textContent = "<strong>저녁메뉴</strong>";
+
+      // 4. 동적 요소 생성
+      menuAddBtn.addEventListener("click", () => {
+        // 동적으로 요소 추가: createElement -> appendChild
+        const li = document.createElement("li");
+        li.textContent = menuInput.value;
+        console.log(li);
+        // appendChild
+        // 마지막 요소
+        menuList.appendChild(li);
+        menuInput.value = "";
+      });
+
+      // 요소 추가 순서
+      const fruitList = document.getElementById("fruit-list");
+      const item1 = document.createElement("li");
+      item1.innerText = "사과";
+      const item2 = document.createElement("li");
+      item2.innerText = "수박";
+
+      // append : 마지막에 여러 개의 요소
+      fruitList.append(item1, item2);
+
+      const item3 = document.createElement("li");
+      item3.innerText = "딸기";
+
+      const item4 = document.createElement("li");
+      item4.style.backgroundColor = "pink";
+      item4.innerText = "복숭아";
+
+      //prepend : 맨 처음에 여러 개의 요소
+      fruitList.prepend(item3, item4);
+
+      const item5 = document.createElement("li");
+      item5.style.backgroundColor = "green";
+      item5.innerText = "키위";
+      // insertBefore
+      // parent.insertBefore(newElement, targetElement)
+      // 자식 요소로 넣을 때 타겟 요소를 기준으로 앞에 삽입
+      fruitList.insertBefore(item5, item4);
+
+      // insertAdjacentHTML
+      const target = document.getElementById("target");
+      console.log(target);
+      // beforebegin
+      // afterbegin
+      // beforeend
+      // afterend
+
+      target.insertAdjacentHTML(
+        "beforebegin",
+        "<span style='color:red'>비포비긴</span>"
+      );
+      target.insertAdjacentHTML("afterbegin", "애프터비긴");
+      target.insertAdjacentHTML("beforeend", "비포엔드");
+      target.insertAdjacentHTML("afterend", "애프터엔드");
+
+      const fruitData = ["사과", "수박", "바나나", "딸기", "멜론", "참외"];
+      fruitList.innerHTML = "";
+      const docFrag = document.createDocumentFragment();
+      fruitData.forEach((el) => {
+        const li = document.createElement("li");
+        li.innerText = el;
+        // fruitsList.appendChild(li)
+        docFrag.appendChild(li);
+      });
+      fruitList.appendChild(docFrag);
+
+      // 요소 제거
+      // 1. 자식요소 제거
+      // fruitList.innerHTML = '';
+      const fruitElements = fruitList.querySelectorAll("li");
+      console.log(fruitElements);
+      fruitList.removeChild(fruitElements[0]);
+      // 2. 자기 자신을 제거
+      fruitList.remove();
+    </script>
+  </body>
+</html>
