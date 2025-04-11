@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 선언문이 끌어올려지는 것처럼 동작 => 호이스팅
+      // 작성한 구문 이전에는 사용이 불가 => 일시적 사각 지대 (TDZ)
+      // const user2 = new User("철수");
+      // console.log(user2.name);
+
+      class User {
+        constructor(name) {
+          this.name = name;
+        }
+      }
+      const user1 = new User("민수");
+      console.log(user1.name);
+
+      const robot1 = new Robot("로봇1");
+      console.log(robot1.name);
+      function Robot(name) {
+        this.name = name;
+      }
+    </script>
+  </body>
+</html>
