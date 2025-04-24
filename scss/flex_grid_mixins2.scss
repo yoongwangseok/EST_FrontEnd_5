@@ -1,0 +1,29 @@
+@mixin flex($value) {
+  @if($value == 1){
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  @else if($value == 2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @else if($value == 3){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @else if($value == 4){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+.one{
+  @include flex(2);
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}

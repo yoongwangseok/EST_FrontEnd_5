@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+
+/* Default */
+@function unitCheck($x) {
+
+    // 단위체크
+    @if(type-of($x)==number) {
+        @if(unitless($x)) {
+            @return $x+px;
+        }
+    }
+
+    @return $x;
+}

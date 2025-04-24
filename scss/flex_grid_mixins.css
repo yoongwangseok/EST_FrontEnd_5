@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*
+GPT를 사용해서 flex와 grid에 유용한 믹스인을 만들어보세요.
+'flex와 grid에 유용한 scss 믹스인을 만들어줘. 실무에서 가장 자주 사용하는 믹스인으로 한 3 ~ 4개씩 구성해줬으면 좋겠어.'
+
+
+제가 뽑은 믹스인도 드리겠습니다. 한 번 살펴봐 주시고, 가장 좋은 것은 여러분이 작성한 CSS를 클로드에 업로드 한 후 분석하게 해서, 믹스인을 만들어달라고 하는 것이 좋습니다. 여러분의 코딩 습관에 따라 믹스인을 생성하는 것이니 효율이 높아요.
+*/
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.vertical-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.featured-item {
+  grid-row: 0.3333333333;
+  grid-column: 0.3333333333;
+}/*# sourceMappingURL=flex_grid_mixins.css.map */
