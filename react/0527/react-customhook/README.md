@@ -1,1 +1,0 @@
-# Getting Started with cra-template-my-template
